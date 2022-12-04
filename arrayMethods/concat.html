@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmateurJS - Breakdowns for commonly use methods</title>
+    <link href="../styles.css" rel="stylesheet" />
+    <link href="../methods.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&family=Merriweather:ital@1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="amateurjs__main-container">
+        <header>
+            <h1><a href="../index.html">AmateurJS</a></h1>
+            <h2>A working guide on commonly used methods</h2>
+            <div class="divider"></div>
+
+            <nav>
+                <ul>
+                    <a href="../index.html"><button class="button--back resize">Back</button></a>
+                    <li class="button--back-container"><a href="../index.html" class="button--back-link"><button
+                                class="button--back">Back</button></a></li>
+                    <li><a href="../index.html" id="current-tab">Array Methods</a></li>
+                    <li><a href="../string.html">String Methods</a></li>
+                </ul>
+
+            </nav>
+        </header>
+
+        <main>
+
+            <!-- Row 1 -->
+
+            <!-- EXPLANATION -->
+
+            <div class="amateurjs__method-content-container">
+                <div class="explanation">
+                    <h3>Concat() method</h3>
+                    <p>The <span class="method">concat()</span> method is used to merge 2 or more arrays.</p>
+                    <p>In this example we are simply concatenating a literal array with values <span
+                            class="bold">4</span> and <span class="bold">5</span> to our existing <span
+                            class="bold">numbers</span> array.</p>
+                    <p>Our new array is stored in the variable <span class="bold">fiveNumbers</span>.</p>
+                </div>
+
+                <!-- DEMO -->
+
+                <!-- Code -->
+                <div class="arrayMethod">
+                    <pre>
+                    <code>
+<span class="statement">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
+
+<span class="statement">const</span> fiveNumbers = numbers.<span class="method">concat</span>([4, 5])
+
+console.<span class="method">log</span>(fiveNumbers);
+
+<span class="comment">Expected Output: Array [1, 2, 3, 4, 5]</span>
+    </code>
+</pre>
+                </div>
+                <!-- End Code -->
+
+                <!-- TANGENTS -->
+
+                <aside class="tangent">
+                    <h3 class="tangent-title tangent-title-top">Tangents</h3>
+                    <div class="tangent-slider tangent-slider-top"></div>
+                    <div class="tangent-content-container tangent-content-container-top">
+                        <p><span class="bold">It's</span> possible to add values that aren't in an array with <span
+                                class="method">concat()</span>.</p>
+                        <p>For example this would produce the same result as in our example.</p>
+
+                        <!-- Start Coe -->
+                        <pre><code>numbers.<span class="method">concat</span>(4, 5)</code></pre>
+                        <!-- End Code -->
+
+
+                    </div>
+                </aside>
+            </div>
+
+            <div class="spacer"></div>
+
+            <!-- Row 2 -->
+
+            <!-- EXPLANATION -->
+
+            <div class="amateurjs__method-content-container">
+                <div class="explanation">
+                    <h3>Combining More Than 2 Arrays</h3>
+                    <p>Here we are referencing our variables <span class="bold">array2</span> and <span
+                            class="bold">array3</span> in our <span class="method">concat()</span> method.</p>
+                    <p>The result is stored within <span class="bold">combinedArray</span>.</p>
+                    <p>There is no "real" limit on how many arguments you can pass to <span
+                            class="method">concat()</span>.</p>
+                </div>
+
+                <!-- DEMO -->
+
+                <!-- Code -->
+                <div class="arrayMethod">
+                    <pre>
+<code>
+<span class="statement">const</span> array1 = [<span class="number">10</span>, <span class="number">11</span>];
+<span class="statement">const</span> array2 = [<span class="number">22</span>, <span class="number">23</span>];
+<span class="statement">const</span> array3 = [<span class="number">34</span>, <span class="number">35</span>];
+
+<span class="statement">const</span> combinedArray = array1.<span class="method">concat</span>(array2, array3);
+
+console.<span class="method">log</span>(combinedArray);
+
+<span class="comment">// Expected Output: 
+Array [10, 11, 22, 23, 34, 35];
+</span>
+</code>
+</pre>
+                </div>
+                <!-- End Code -->
+
+                <!-- TANGENTS -->
+
+                <aside class="tangent">
+                    <h3 class="tangent-title tangent-title-bot">Tangents</h3>
+                    <div class="tangent-slider tangent-slider-bot"></div>
+                    <div class="tangent-content-container tangent-content-container-bot">
+                        <p><span class="bold">It</span> is also possible to concatenate objects with <span
+                                class="method">concat()</span>.</p>
+                        <p>For example:</p>
+
+                        <!-- Start Code -->
+                        <pre><code>
+<span class="statement">const</span> obj = {name: "Peter", id: 1};
+
+console.<span class="method">log</span>(<span class="string">"Object Peter"</span>, obj);
+
+<span class="comment">// ["Object Peter, {name: "Peter, id: 1}]</span>
+</code></pre>
+<!-- End Code -->
+
+                    </div>
+                </aside>
+            </div>
+
+        </main>
+
+        <footer>
+            <span>&copy; <a href="https://pptn-web-dev.netlify.app/" target="_blank" rel="noreferrer noopener">Peter
+                    Nguyen</a> 2022</span>
+            <p id="names"></p>
+        </footer>
+    </div>
+</body>
+
+<script></script>
+
+<script src="../scripts/scripts.js"></script>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmateurJS - Breakdowns for commonly use methods</title>
+    <link href="../styles.css" rel="stylesheet" />
+    <link href="../methods.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&family=Merriweather:ital@1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="amateurjs__main-container">
+        <header>
+            <h1><a href="../index.html">AmateurJS</a></h1>
+            <h2>A working guide on commonly used methods</h2>
+            <div class="divider"></div>
+
+            <nav>
+                <ul>
+                    <a href="../index.html"><button class="button--back resize">Back</button></a>
+                    <li class="button--back-container"><a href="../index.html" class="button--back-link"><button
+                                class="button--back">Back</button></a></li>
+                    <li><a href="../index.html" id="current-tab">Array Methods</a></li>
+                    <li><a href="../string.html">String Methods</a></li>
+                </ul>
+
+            </nav>
+        </header>
+
+        <main>
+
+            <!-- Row 1 -->
+
+            <!-- EXPLANATION -->
+
+            <div class="amateurjs__method-content-container">
+                <div class="explanation">
+                    <h3>Slice() method</h3>
+                    <p>The <span class="method">method()</span> returns a new array based on a start and optional end
+                        index.</p>
+                    <p>Here we use a start index of 2. Everything after the start index is included.</p>
+
+                </div>
+
+                <!-- DEMO -->
+
+                <!-- Code -->
+                <div class="arrayMethod">
+                    <pre>
+                    <code>
+<span class="statement">const</span> myArray = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];
+
+<span class="statement">const</span> threeNumbers = myArray.<span class="method">slice</span>(2);
+
+console.<span class="method">log</span>(threeNumbers);
+
+<span class="comment">// Expected Output: Array [3, 4, 5] </span>
+    </code>
+</pre>
+                </div>
+                <!-- End Code -->
+
+                <!-- TANGENTS -->
+
+                <aside class="tangent">
+                    <h3 class="tangent-title tangent-title-top">Tangents</h3>
+                    <div class="tangent-slider tangent-slider-top"></div>
+                    <div class="tangent-content-container tangent-content-container-top">
+                        <p><span class="bold">If</span> the start index is 0 then the entire array is copied.</p>
+                        <!-- Start Code -->
+                        <pre><code>
+<span class="statement">const</span> allElements = myArray.slice(0);
+
+console.<span class="method">log</span>(allElements);
+
+<span class="comment">// Expected Output: 
+Array [1, 2, 3, 4, 5]</span>
+</code></pre>
+                        <!-- End Code -->
+                        <p><span class="bold">This</span> method does not mutate the calling array.</p>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="spacer"></div>
+
+            <!-- Row 2 -->
+
+            <!-- EXPLANATION -->
+
+            <div class="amateurjs__method-content-container">
+                <div class="explanation">
+                    <h3>Using End Index</h3>
+                    <p>The second argument to slice is the ending parameter.</p>
+                    <p>This <span class="method">slice</span>(2, 4) call can be explained as:</p>
+                    <p>Starting at index 2 and up until, but not including, index 4.</p>
+                </div>
+
+                <!-- DEMO -->
+
+                <!-- Code -->
+                <div class="arrayMethod">
+                    <pre>
+<code>
+<span class="statement">const</span> myArray = [<span class="string">"cat"</span>, <span class="string">"dog"</span>, <span class="string">"goat"</span>, <span class="string">"chicken"</span>, <span class="string">"horse"</span>];
+
+<span class="statement">const</span> twoAnimals = myArray.<span class="method">slice</span>(2, 4);
+    
+console.<span class="method">log</span>(twoAnimals);
+    
+<span class="comment">// Expected Output: Array ["goat", "chicken"] </span>
+</code>
+</pre>
+                </div>
+                <!-- End Code -->
+
+                <!-- TANGENTS -->
+
+                <aside class="tangent">
+                    <h3 class="tangent-title tangent-title-bot">Tangents</h3>
+                    <div class="tangent-slider tangent-slider-bot"></div>
+                    <div class="tangent-content-container tangent-content-container-bot">
+                        <p><span class="bold">The</span> ending index can greater than the length of the calling array.
+                        </p>
+
+                        <!-- Start Code -->
+                        <pre><code>
+.<span class="method">slice</span>(2, 10);
+
+<span class="comment">// Expected Output: Array
+["cat", "dog", "goat", "chicken", "horse"]
+</span>
+</code></pre>
+                        <!-- End Code -->
+
+                        <p><span class="bold">It</span> is also possible to use negative integers for the end index</p>
+
+                        <!-- Start Code -->
+                        <pre><code>
+.<span class="method">slice</span>(0, -1);
+
+<span class="comment">// Expected Output: Array
+["cat", "dog", "goat", "chicken"]
+</span>
+</code></pre>
+                        <!-- End Code -->
+
+<p>It can be understood as:</p>
+<p>Include everything from index 2 but subtract 1 off.</p>
+                    </div>
+                </aside>
+            </div>
+
+        </main>
+
+        <footer>
+            <span>&copy; <a href="https://pptn-web-dev.netlify.app/" target="_blank" rel="noreferrer noopener">Peter
+                    Nguyen</a> 2022</span>
+            <p id="names"></p>
+        </footer>
+    </div>
+</body>
+
+<script>
+
+</script>
+
+<script src="../scripts/scripts.js"></script>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmateurJS - Breakdowns for commonly use methods</title>
+    <link href="../styles.css" rel="stylesheet" />
+    <link href="../methods.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&family=Merriweather:ital@1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="amateurjs__main-container">
+        <header>
+            <h1><a href="../index.html">AmateurJS</a></h1>
+            <h2>A working guide on commonly used methods</h2>
+            <div class="divider"></div>
+
+            <nav>
+                <ul>
+                    <a href="../index.html"><button class="button--back resize">Back</button></a>
+                    <li class="button--back-container"><a href="../index.html" class="button--back-link"><button
+                                class="button--back">Back</button></a></li>
+                    <li><a href="../index.html" id="current-tab">Array Methods</a></li>
+                    <li><a href="../string.html">String Methods</a></li>
+                </ul>
+
+            </nav>
+        </header>
+
+        <main>
+
+            <!-- Row 1 -->
+
+            <!-- EXPLANATION -->
+
+            <div class="amateurjs__method-content-container">
+                <div class="explanation">
+                    <h3>Map() method</h3>
+                    <p>The <span class="method">map()</span> method creates a new array from the results of a function
+                        you provide.</p>
+                    <p>Our new array will be stored with <span class="bold" b>multipliedNumbers</span>.</p>
+                    <p>Within <span class="method">map</span>'s call <span class="underline">()</span> is our provided
+                        function.</p>
+                    <p><span class="method">Map()</span> calls this provided function for each array element for a total
+                        of 5 times.
+                    <p>In our first iteration (first call of our provided function), <span class="bold">number</span>
+                        represents
+                        our first array element, <span class="value">1</span>.</p>
+                    <p>Continuing this iteration, the function returns the value of <span
+                            class="bold">number</span>/<span class="value">1</span> * <span class="value">2</span>.</p>
+                    <p>Our provided function is called again but now <span class="bold">number</span> represents the
+                        next
+                        array element, <span class="value">2</span>.</p>
+                    <p>This process is repeated for every array element.</p>
+
+                </div>
+
+                <!-- DEMO -->
+
+                <!-- Code -->
+                <div class="arrayMethod">
+                    <pre>
+                    <code>
+<span class="statement">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span>
+
+<span class="statement">const</span> multipliedNumbers = numbers.<span class="method">map</span>(
+    <span class="method">function</span>(number) {
+        return number * <span class="number">2</span>;
+    });
+
+console.<span class="method">log</span>(multipliedNumbers);
+
+<span class="comment">//Expected output: Array [2, 4, 6, 8, 10];</span>
+    </code>
+</pre>
+                </div>
+                <!-- End Code -->
+
+                <!-- TANGENTS -->
+
+                <aside class="tangent">
+                    <h3 class="tangent-title tangent-title-top">Tangents</h3>
+                    <div class="tangent-slider tangent-slider-top"></div>
+                    <div class="tangent-content-container tangent-content-container-top">
+                        <p><span class="bold">Methods</span> are functions but simply relate to an object - in this case
+                            the Array object.</p>
+                        <p>Essentially <span class="method">map()</span> is a function which requires another
+                            function (that you provide) to work.</p>
+                        <p><span class="bold" b>Typically</span> you will see anonymous functions and other short-hand
+                            variations:
+                        </p>
+
+                        <!-- Code -->
+                        <pre><code>.<span class="method">map</span>((number) {
+    return number * <span class="number">2</span>;
+};
+
+<span class="comment">// or</span>
+
+.<span class="method">map</span>(number => number * <span class="number">2</span>);</code></pre>
+                        <!-- End Code -->
+                        <p>They both do the same thing.</p>
+                        <p><span class="bold">If</span> I console.<span class="method">log</span>(<span
+                                class="bold">numbers</span>), it will
+                            remain the same. It doesn't
+                            mutate the existing array.</p>
+                        <p>Meaning if we need to use the same array with <span class="method">map()</span> but with a
+                            different function we can.</p>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="spacer"></div>
+
+            <!-- Row 2 -->
+
+            <!-- EXPLANATION -->
+
+            <div class="amateurjs__method-content-container">
+                <div class="explanation">
+                    <h3>Another Use Case</h3>
+                    <p>Often data is stored within an array of objects. Our <span class="bold">employees</span> array is
+                        an example of that.</p>
+                    <p>Each object in our array has 3 properties: <span class="bold">firstName</span> and <span
+                            class="bold">lastName</span>.</p>
+                    <p>Like above, we .<span class="method">map</span> (and loop) over our existing <span
+                            class="bold">employee<span class="bold">s</span></span> array.</p>
+                    <p>Our parameter <span class="bold">employee</span>, now a local variable, represents each array
+                        item (as an object with 3 properties).</p>
+                    <p>Our function returns a string using the <span class="bold">employee</span> local variable, using dot notation to access these values.</p>
+                    <p><span class="bold">employee.firstName | employee.lastName</span></p>
+                    <p>We are left with a new array stored within <span class="bold">greetings</span> to be used
+                        however we like.</p>
+                </div>
+
+                <!-- DEMO -->
+
+                <!-- Code -->
+                <div class="arrayMethod">
+                    <pre>
+<code>
+<span class="statement">const</span> employees = [
+    {
+        firstName: <span class="string">"Bob"</span>,
+        lastName: <span class="string">"Jane"</span>,
+        id: <span class="number">1</span>
+    },
+    {
+        firstName: <span class="string">"Lindsey"</span>,
+        lastName: <span class="string">"Wagner"</span>,
+        id: <span class="number">2</span>
+    }
+];
+
+<span class="statement">const</span> greetings = employees.<span class="method">map</span>((employee) => {
+    return <span class="string">"Hello "</span> + employee.<span class="statement">firstName</span> + <span class="string">" "</span> + employee.<span class="statement">lastName</span>
+});
+
+console.<span class="method">log</span>(greetings);
+
+<span class="comment">/* 
+Expected Output: Array ["Hello Bob Jane", "Hello Lindsey Wagner"];
+*/</span>
+</code>
+</pre>
+                </div>
+                <!-- End Code -->
+
+                <!-- TANGENTS -->
+
+                <aside class="tangent">
+                    <h3 class="tangent-title tangent-title-bot">Tangents</h3>
+                    <div class="tangent-slider tangent-slider-bot"></div>
+                    <div class="tangent-content-container tangent-content-container-bot">
+                        <p><span class="bold">This</span> use case is far more common in <span
+                                class="statement">ReactJS</span> where you could do something like this with an array of
+                            objects.</p>
+
+                        <!-- Start Code -->
+                        <pre><code>
+<span>employees</span>.<span class="method">map</span>((employee) {
+    return {
+        &lt;h1&gt;{employee.<span class="statement">id</span>}&lt;h1&gt;
+    }
+})
+</pre></code>
+                        <!-- End Code -->
+
+                        <p>This would return a series of &lt;h1&gt; tags with the value of <span
+                                class="bold">employee.id</span> instead of a new array.</p>
+                        <p><span class="bold">The</span> variable <span class="bold">greetings</span> can be chained
+                            with other methods like .<span class="method">join()</span>.</p>
+
+                        <!-- Start Code -->
+                        <pre><code>
+console.<span class="method">log</span>(greetings.<span class="method">join</span>());
+<span class="comment">
+// Expected Output: String
+// Hello Bob Jane, Hello Lindsey Wagner
+</span>
+</pre></code>
+                        <!-- End Code -->
+
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <footer>
+            <span>&copy; <a href="https://pptn-web-dev.netlify.app/" target="_blank" rel="noreferrer noopener">Peter
+                    Nguyen</a> 2022</span>
+            <p id="names"></p>
+        </footer>
+    </div>
+</body>
+
+<script>
+</script>
+
+<script src="../scripts/scripts.js"></script>
+
+</html>

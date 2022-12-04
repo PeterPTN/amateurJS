@@ -1,0 +1,264 @@
+/* Global CSS styles */
+:root {
+    font-size: 1rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+
+    font-family: var(--code);
+    --code: 'M PLUS 1 Code', sans-serif;
+    --regular: 'Merriweather', Arial, Helvetica, sans-serif;
+
+    --darkgrey: rgb(48, 47, 46);
+    --grey: rgb(73, 73, 73);
+    --white:  rgb(216, 216, 216);
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Make an ellipses that truncates overflow for a SINGLE line */
+.truncate {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Multi line truncate */
+.multi-truncate {
+    line-height: 2rem;
+    max-height: 4rem;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}
+
+pre {
+    white-space: pre-wrap; 
+}
+
+/* ---- Styles ---- */
+
+body {
+    background-color: rgb(50, 51, 51);  
+    overflow-x: hidden;
+}
+
+.amateurjs__main-container {
+    width: 1500px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    margin: auto;
+    position: relative;
+    
+}
+
+@media screen and (max-width: 1910px) {
+    .amateurjs__main-container {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .amateurjs__main-container {
+        width: 95vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .amateurjs__main-container {
+        width: 95vw;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .amateurjs__main-container {
+        width: 100vw;
+    }
+}
+
+/* ---- Header ---- */
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100vw;
+}
+
+/* AmateurJS */
+header h1 {
+    background-color: orange;
+    text-align: center;
+    border-bottom: 1rem solid rgb(50, 51, 51);
+    
+    width: 100%;
+    padding: .5rem;
+}
+
+h1 > a {
+    color: black;
+}
+
+/* Tag-line */
+header h2 {
+    margin: 1.25rem 0 1.25rem;
+    font-size: 1.25em;
+}
+
+@media screen and (max-width: 1024px) {
+    header h2 {
+        width: 90vw;
+        text-align: center;
+    }
+}
+
+.divider {
+    height: 2px;
+    width: 800px;
+    background-color: rgba(49, 47, 45, 0.082);
+    margin-bottom: 1.25rem;
+}
+
+@media screen and (max-width: 1910px) {
+    .divider {
+        width: 80vw;
+    }
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    position: relative;
+
+    column-gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+nav li {
+    background-color: rgb(131, 135, 139);
+    box-shadow: 2px 2px .5px black;
+    display: flex;
+    align-items: stretch;
+}
+
+nav li:hover {
+    transform: scale(1.02);
+}
+
+#current-tab {
+    background-color: rgb(241, 28, 117);
+    padding: .75rem .5rem;
+}
+
+nav a {
+    color: black;
+    font-weight: 500;
+    font-size: 1.05em;
+    padding: .5rem;
+}
+
+/* Button + Back */
+
+.button--back-link {
+   padding: 0;
+} 
+
+button {
+    border: none;
+    cursor: pointer;
+    
+    box-shadow: 2px 2px 1px black;
+    padding: .1rem .35rem;
+    font-size: 1.05rem;
+}
+
+.button--back {
+    background-color: red;
+    color: white;
+}
+
+.button--back-container {
+    position: absolute;
+    bottom: 0;
+    left: -1.75rem;
+    padding: 0;
+}
+
+.button--back.resize {
+    display: none;
+}
+
+.button--back.resize:hover {
+    transform: scale(1.02);
+}
+
+@media screen and (max-width: 1600px) {
+    .button--back {
+        display: none;
+    }
+
+    .button--back.resize {
+        display: block;
+        position: absolute;
+        top: 3.5rem;
+        left: 7rem;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .button--back.resize {
+        top: 4rem;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .button--back.resize {
+        top: 3.5rem;
+    }
+}
+
+
+/* ---- Footer ---- */
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding-bottom: 2rem;
+}
+
+footer a {
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmateurJS - Breakdowns for commonly use methods</title>
+    <link href="../styles.css" rel="stylesheet" />
+    <link href="../methods.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&family=Merriweather:ital@1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="amateurjs__main-container">
+        <header>
+            <h1><a href="../index.html">AmateurJS</a></h1>
+            <h2>A working guide on commonly used methods</h2>
+            <div class="divider"></div>
+
+            <nav>
+                <ul>
+                    <a href="../index.html"><button class="button--back resize">Back</button></a>
+                    <li class="button--back-container"><a href="../index.html" class="button--back-link"><button
+                                class="button--back">Back</button></a></li>
+                    <li><a href="../index.html" id="current-tab">Array Methods</a></li>
+                    <li><a href="../string.html">String Methods</a></li>
+                </ul>
+
+            </nav>
+        </header>
+
+        <main>
+
+            <!-- Row 1 -->
+
+            <!-- EXPLANATION -->
+
+            <div class="amateurjs__method-content-container">
+                <div class="explanation">
+                    <h3>Filter() method</h3>
+                    <p>The <span class="method">filter()</span> method returns a new array of elements that pass a
+                        boolean condition.</p>
+                    <p>This condition is nested within a function you provide.</p>
+                    <p>We will store this new array in <span class="bold">numbersDivisableByTwo</span>.</p>
+                    <p>Here we call <span class="method">filter()</span> after our calling array <span
+                            class="bold">numbers</span>.</p>
+                    <p>Within <span class="method">filter</span>'s <span class="underline">()</span> we add our
+                        function. In this function we only return numbers that, when divided by 2, leaves a remainder of
+                        0.</p>
+                    <p>Here our function is called 4 times -- once for each array element. <span
+                            class=bold>number</span>'s value changes to the next array element with every new function
+                        call.</p>
+                    <p>Each function call will essentially test these conditions:</p>
+                    <pre><code><span class="number">10</span> % 2 === 0 | <span class="number">32</span> % 2 === 0 | <span class="number">67</span> % === 0 | etc.</code></pre>
+                    <p>If true then the value is added to the new array.</p>
+                </div>
+
+                <!-- DEMO -->
+
+                <!-- Code -->
+                <div class="arrayMethod">
+                    <pre>
+                    <code>
+<span class="statement">const</span> numbers = [<span class="number">10</span>, <span class="number">32</span>, <span class="number">67</span>, <span class="number">99</span>];
+
+<span class="statement">const</span> numbersDivisableByTwo = numbers.<span class="method">filter</span>(
+    <span class="method">function</span>(number) {
+        return number % <span class="number">2</span> === <span class="number">0</span>
+    });
+
+console.<span class="method">log</span>(numbersDivisableByTwo);
+
+<span class="comment">// Expected Output: Array [10, 32]</span>
+    </code>
+</pre>
+                </div>
+                <!-- End Code -->
+
+                <!-- TANGENTS -->
+
+                <aside class="tangent">
+                    <h3 class="tangent-title tangent-title-top">Tangents</h3>
+                    <div class="tangent-slider tangent-slider-top"></div>
+                    <div class="tangent-content-container tangent-content-container-top">
+                        <p><span class="bold">Methods</span> are functions but simply relate to an object - in this case
+                            the Array object.</p>
+                        <p>Essentially <span class="method">filter()</span> is a function which requires another
+                            function (that you provide) to work.</p>
+                        <p><span class="bold" b>Typically</span> you will see anonymous functions and other short-hand
+                            variations:
+                        </p>
+
+                        <!-- Code -->
+                        <pre><code>.<span class="method">filter</span>((number) {
+    return number % <span class="number">2</span> === <span class="number">0</span>;
+});
+
+<span class="comment">// or</span>
+
+.<span class="method">filter</span>(number => number % <span class="number">2</span> === <span class="number">0</span>);</code></pre>
+                        <!-- End Code -->
+
+                        <p>They both do the same thing.</p>
+                        <p><span class="bold">This</span> method is appropriate when you need a larger, more general data set into something more specific. </p>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="spacer"></div>
+
+            <!-- Row 2 -->
+
+            <!-- EXPLANATION -->
+
+            <div class="amateurjs__method-content-container">
+                <div class="explanation">
+                    <h3>Another Use Case</h3>
+                    <p>Often data is stored within an array of objects. Occasionally our data might not be well
+                        maintained. Our <span class="bold">staff</span> array is
+                        an example of that.</p>
+                    <p>For whatever reason we have 2 directors. Let's say that Bob Jane is this company's director.</p>
+                    <p>Let's imagine this array has +50 elements.</p>
+                    <p>We want to be able to store our director's information from our <span class="bold">staff</span>
+                        array to our <span class="bold">director</span> variable so that we can easily access his name
+                        and department
+                        whenever we like.</p>
+                    <p>Like above, we .<span class="method">filter</span> (and loop) over our existing <span
+                            class="bold">staff<span class="bold">s</span></span> array.</p>
+                    <p>Again we have a provided function. Here we outlined 2 conditions due to the error in our <span
+                            class="bold">staff</span> array listing 2 directors.</p>
+                    <p>The conditions will only return the array element (in this case an Object) where name is equal to
+                        <span class="bold">Bob Jane</span> and where department is equal to <span
+                            class="bold">Director</span>.
+                    </p>
+                    <p>We can now use the <span class="bold">director</span> variable whichever way we want.</p>
+                </div>
+
+                <!-- DEMO -->
+
+                <!-- Code -->
+                <div class="arrayMethod">
+                    <pre>
+<code>
+<span class="statement">const</span> staff = [
+    {
+        name: <span class="string">"Bob Jane"</span>,
+        department: <span class="string">"Director"</span>
+    },
+    {
+        name: <span class="string">"Lindsey Wagner"</span>,
+        department: <span class="string">"Director"</span>
+    }
+];
+
+<span class="statement">const</span> director = staff.<span class="method">filter</span>((staffMember) => {
+    return staffMember.department === "<span class="string">Director</span>" & staffMember.name === "<span class="string">Bob Jane</span>";
+});
+
+console.<span class="method">log</span>(director);
+
+<span class="comment">/* 
+Expected Output: Array [
+    {
+        name: "Bob Jane",
+        department: "Director"
+    }
+];
+*/</span>
+</code>
+</pre>
+                </div>
+                <!-- End Code -->
+
+                <!-- TANGENTS -->
+
+                <aside class="tangent">
+                    <h3 class="tangent-title tangent-title-bot">Tangents</h3>
+                    <div class="tangent-slider tangent-slider-bot"></div>
+                    <div class="tangent-content-container tangent-content-container-bot">
+                        <p><span class="bold">Use</span> cases like this aren't uncommon. Typically you will encounter
+                            them when fetching data from an API.</p>
+                        <p>Sometimes it's much easier to simply count which index the element you need is and set it to
+                            a variable.</p>
+
+                        <!-- Start Code -->
+                        <code><pre>
+<span class="statement">const</span> realDirector = staff[0];</pre></code>
+                        <!-- End Code -->
+
+                        <p>Other times the array is far too big and counting indexes isn't prudent</p>
+                        <p>Instead you could use something like this to find the right index.</p>
+
+                        <!-- Start Code -->
+                        <code><pre>
+<span class="statement">const</span> directorIndex = staff
+    .map(staffMember => staffMember.name)
+    .indexOf("Bob Jane");
+
+console.<span class="method">log</span>(directorIndex);
+
+<span class="comment">// Expected Output: 0</span>
+
+<span class="statement">const</span> director = staff[directorIndex];
+</pre></code>
+                        <!-- End Code -->
+
+                        <p>But this method only checks for a single condition which may or may not be enough for certain
+                            use cases.</p>
+                    </div>
+                </aside>
+            </div>
+
+        </main>
+
+        <footer>
+            <span>&copy; <a href="https://pptn-web-dev.netlify.app/" target="_blank" rel="noreferrer noopener">Peter
+                    Nguyen</a> 2022</span>
+            <p id="names"></p>
+        </footer>
+    </div>
+</body>
+
+<script>
+</script>
+
+<script src="../scripts/scripts.js"></script>
+
+</html>

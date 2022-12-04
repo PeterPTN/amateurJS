@@ -1,0 +1,130 @@
+/* ---- Homepage Grid Display ---- */
+
+/* Grid Container */
+main {
+    padding: 0rem 2rem 2rem;
+    background-color: white;
+}
+
+main ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+main>h3,
+main>p {
+    text-align: center;
+}
+
+main>p {
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.amateurjs__functional-programming-container {
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 1655px) {
+    main ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 970px) {
+    main ul {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/* Grid Cell */
+main a {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.856);
+    padding: 1rem 3rem;
+    box-shadow: 2px 2px 1px rgb(20, 20, 20);
+}
+
+main a:hover {
+    transform: scale(1.02);
+}
+
+li p {
+    text-align: center;
+}
+
+/* Method Name */
+li>p:nth-child(1) {
+    color: red;
+    font-weight: bolder;
+}
+
+li *+* {
+    color: black;
+}
+
+li>p:nth-child(3) {
+    background-color: rgb(250, 245, 223);
+    padding: 1rem;
+}
+
+/* Demo */
+.amateurjs__method-image-container {
+    margin: 1rem 0;
+}
+
+.amateurjs__method-image-container>p {
+    margin: 1rem 0;
+}
+
+.amateurjs__method-image-before,
+.amateurjs__method-image-after {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .amateurjs__functional-programming-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+
+    .amateurjs__method-image-before,
+    .amateurjs__method-image-after {
+        flex-direction: column;
+    }
+}
+
+.amateurjs__method-image-before>div,
+.amateurjs__method-image-after>div {
+    padding: 1rem 2rem;
+}
+
+
+.orange-box {
+    background-color: rgb(231, 137, 48);
+}
+
+.orange-box.hide {
+    visibility: hidden;
+}
+
+.grey-box {
+    background-color: rgb(179, 178, 165);
+}
+
+.grey-box.hide {
+    visibility: hidden;
+}
+
+.blue-box {
+    background-color: rgb(85, 174, 233);
+}
+
+.blue-box.hide {
+    visibility: hidden;
+}

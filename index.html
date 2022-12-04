@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmateurJS - Breakdowns for commonly use methods</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="homePages.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&family=Merriweather:ital@1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="amateurjs__main-container">
+        <header>
+            <h1><a href="index.html">AmateurJS</a></h1>
+            <h2>A working guide on commonly used methods</h2>
+            <div class="divider"></div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html" id="current-tab">Array Methods</a></li>
+                    <li><a href="string.html">String Methods</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h3>Functional Programming Methods:</h3>
+            <p>Doesn't mutate your applied array(s)</p>
+            <ul class="amateurjs__functional-programming-container">
+                <a href="arrayMethods/map.html">
+                    <li>
+                        <p>map()</p>
+
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="orange-box">
+                                    <p>2</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>3</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>4</p>
+                                </div>
+
+                            </div>
+
+                            <p>.map(number => number * 2)</p>
+
+                            <div class="amateurjs__method-image-after">
+                                <div class="orange-box">
+                                    <p>4</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>6</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>8</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>Iterate over an entire array and return a new array - add your own conditions!</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/filter.html">
+                    <li>
+                        <p>filter()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+                                <div class="orange-box">
+                                    <p>dog</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>cat</p>
+                                </div>
+
+                            </div>
+
+                            <p>.filter(animal => animal === "cat")</p>
+
+                            <div class="amateurjs__method-image-after">
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>cat</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Iterate over an entire array and return a new array of filtered elements (based on your
+                            conditons)</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/slice.html">
+                    <li>
+                        <p>slice()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+
+                                <div class="blue-box">
+                                    <p>10</p>
+                                </div>
+                                <div class="orange-box">
+                                    <p>11</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>12</p>
+                                </div>
+
+                            </div>
+
+                            <p>.slice(1, 3)</p>
+
+                            <div class="amateurjs__method-image-after">
+
+                                <div class="orange-box">
+                                    <p>11</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>12</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <p>Return a portion of an array between 2 indices - start-index MUST, end-index OPTIONAL</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/concat.html">
+                    <li>
+                        <p>concat()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+                            </div>
+
+                            <p>.concat(["dog", "goat"])</p>
+
+                            <div class="amateurjs__method-image-after">
+                                <div class="grey-box">
+                                    <p>dog</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>goat</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <p>Merge 2 or more arrays</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/reduce.html">
+                    <li>
+                        <p>reduce()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="blue-box">
+                                    <p>1</p>
+                                </div>
+
+                                <div class="blue-box">
+                                    <p>2</p>
+                                </div>
+
+                                <div class="blue-box">
+                                    <p>3</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>4</p>
+                                </div>
+                            </div>
+
+                            <p>.reduce((accumulator, currentValue) => accumulator + currentValue)</p>
+
+                            <div class="amateurjs__method-image-after">
+
+                                <div class="blue-box">
+                                    <p>10</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <p>Return a single value based on a user-defined reducer function (sums, minuses, multiplcations
+                            etc.)</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/indexOf.html">
+                    <li>
+                        <p>indexOf()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="orange-box">
+                                    <p>cat</p>
+                                </div>
+
+                                <div class="orange-box">
+                                    <p>dog</p>
+                                </div>
+
+                                <div class="orange-box">
+                                    <p>goat</p>
+                                </div>
+                            </div>
+
+                            <p>.indexOf("cat")</p>
+
+                            <div class="amateurjs__method-image-after">
+
+                                <div class="orange-box">
+                                    <p>cat</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <p>Returns the index of an element that matches the condition - optional starting index</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/join.html">
+                    <li>
+                        <p>join()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="orange-box">
+                                    <p>1</p>
+                                </div>
+
+                                <div class="orange-box">
+                                    <p>2</p>
+                                </div>
+
+                                <div class="orange-box">
+                                    <p>3</p>
+                                </div>
+                            </div>
+
+                            <p>.join(" and ")</p>
+
+                            <div class="amateurjs__method-image-after">
+
+                                <div class="orange-box">
+                                    <p>1 and 2 and 3</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <p>Returns a new string of array elements separated/delimited by a string (" ", "-", ", " etc.)
+                        </p>
+                    </li>
+                </a>
+                <a href="arrayMethods/some.html">
+                    <li>
+                        <p>some()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="blue-box">
+                                    <p>1</p>
+                                </div>
+
+                                <div class="blue-box">
+                                    <p>2</p>
+                                </div>
+
+                                <div class="blue-box">
+                                    <p>3</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>4</p>
+                                </div>
+                            </div>
+
+                            <p>.some(number => number % 2 === 0)</p>
+
+                            <div class="amateurjs__method-image-after">
+                                <div class="blue-box">
+                                    <p>true</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Returns true if at least one element passes a condition else return false</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/every.html">
+                    <li>
+                        <p>every()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="grey-box">
+                                    <p>1</p>
+                                </div>
+
+                                <div class="grey-box">
+                                    <p>2</p>
+                                </div>
+
+                                <div class="grey-box">
+                                    <p>3</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>4</p>
+                                </div>
+                            </div>
+
+                            <p>.every(number => number % 2 === 0)</p>
+
+                            <div class="amateurjs__method-image-after">
+                                <div class="grey-box">
+                                    <p>false</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Returns true if all elements pass a condition else return false</p>
+                    </li>
+                </a>
+            </ul>
+
+            <h3>Non-Functional Programming methods:</h3>
+            <p>Mutates your applied array(s)</p>
+            <ul class="amateurjs__non-functional-programming-container">
+                <a href="arrayMethods/sort.html">
+                    <li>
+                        <p>sort()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="grey-box">
+                                    <p>2</p>
+                                </div>
+                                <div class="orange-box">
+                                    <p>3</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>1</p>
+                                </div>
+
+                            </div>
+
+                            <p>.sort()</p>
+
+                            <div class="amateurjs__method-image-after">
+                                <div class="blue-box">
+                                    <p>1</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>2</p>
+                                </div>
+                                <div class="orange-box">
+                                    <p>3</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Sort an array - by default in ascending order</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/pop.html">
+                    <li>
+                        <p>pop()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+
+                                <div class="orange-box">
+                                    <p>dog</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>goat</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+
+                            </div>
+
+                            <p>const cat = array.pop();</p>
+                            <p>console.log(cat); // cat</p>
+
+                            <div class="amateurjs__method-image-after">
+                                <div class="orange-box">
+                                    <p>dog</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>goat</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <p>Removes the last element of an array and stores it</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/shift.html">
+                    <li>
+                        <p>shift()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+
+                                <div class="orange-box">
+                                    <p>dog</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>goat</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+
+                            </div>
+
+                            <p>const dog = array.shift();</p>
+                            <p>console.log(dog); // dog</p>
+
+                            <div class="amateurjs__method-image-after">
+
+                                <div class="blue-box">
+                                    <p>goat</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <p>Removes the first element of an array and stores it</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/push.html">
+                    <li>
+                        <p>push()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="blue-box">
+                                    <p>goat</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+                            </div>
+
+                            <p>array.push("dog");</p>
+
+                            <div class="amateurjs__method-image-after">
+
+                                <div class="blue-box">
+                                    <p>goat</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+                                <div class="orange-box">
+                                    <p>dog</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <p>Adds one or more elements to the end of an existing array</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/unshift.html">
+                    <li>
+                        <p>unshift()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="orange-box">
+                                    <p>dog</p>
+                                </div>
+
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+                            </div>
+
+                            <p>array.unshift("goat");</p>
+
+                            <div class="amateurjs__method-image-after">
+                                <div class="blue-box">
+                                    <p>goat</p>
+                                </div>
+                                <div class="orange-box">
+                                    <p>dog</p>
+                                </div>
+
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <p>Adds one or more elements to the start of an existing array</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/reverse.html">
+                    <li>
+                        <p>reverse()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="grey-box">
+                                    <p>2</p>
+                                </div>
+                                <div class="orange-box">
+                                    <p>3</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>1</p>
+                                </div>
+
+                            </div>
+
+                            <p>.reverse()</p>
+
+                            <div class="amateurjs__method-image-after">
+                                <div class="blue-box">
+                                    <p>1</p>
+                                </div>
+                                <div class="orange-box">
+                                    <p>3</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Reverses an existing array</p>
+                    </li>
+                </a>
+                <a href="arrayMethods/splice.html">
+                    <li>
+                        <p>splice()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="orange-box">
+                                    <p>goat</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>1</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>2</p>
+                                </div>
+
+                            </div>
+
+                            <p>.splice(0, 1, 3)</p>
+
+                            <div class="amateurjs__method-image-after">
+
+                                <div class="orange-box">
+                                    <p>3</p>
+                                </div>
+                                <div class="blue-box">
+                                    <p>1</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Add, remove or replace elements in an existing array - start, delete, item </p>
+                    </li>
+                </a>
+                <a href="arrayMethods/fill.html">
+                    <li>
+                        <p>fill()</p>
+                        <div class="amateurjs__method-image-container">
+                            <div class="amateurjs__method-image-before">
+                                <div class="blue-box">
+                                    <p>1</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>2</p>
+                                </div>
+                                <div class="orange-box">
+                                    <p>3</p>
+                                </div>
+                            </div>
+
+                            <p>.fill("cat", 1)</p>
+
+                            <div class="amateurjs__method-image-after">
+
+                                <div class="blue-box">
+                                    <p>1</p>
+                                </div>
+                                <div class="grey-box">
+                                    <p>cat</p>
+                                </div>
+                                <div class="orange-box">
+                                    <p>cat</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Changes all elements of an array at a starting index</p>
+                    </li>
+                </a>
+            </ul>
+        </main>
+
+        <footer>
+            <span>&copy; <a href="https://pptn-web-dev.netlify.app/" target="_blank" rel="noreferrer noopener">Peter
+                    Nguyen</a> 2022</span>
+        </footer>
+    </div>
+
+    <script>
+        const arrayOne = ["cat", "dog", "goat", 1, 2];
+        arrayOne.splice(0, 3, "3")
+
+
+        console.log(arrayOne);
+    </script>
+</body>
+
+</html>
